@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 
-function Form() {
+function Form(props) {
     const [person, setPerson] = useState("");
 
     function handleChange(e) {
@@ -10,6 +10,8 @@ function Form() {
     }
 
     function handleSubmit(e) {
+        props.handleSubmit(person);
+        setPerson('')
         e.preventDefault();
     }
     return (
@@ -19,7 +21,7 @@ function Form() {
                 onChange={handleChange}
                 value={person.name} />
             <textarea />
-            <button type="submit">Add</button>
+            <button type="submit" >Add</button>
         </form>
     );
 
