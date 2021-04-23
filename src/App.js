@@ -21,34 +21,34 @@ function App() {
 
   const [filter, setFilter] = useState('');
 
-  const addContact = (name, number) => {
+  const addContact = (name, message) => {
     const contact = {
       id: shortid.generate(),
       name,
-      number,
+      message,
     };
 
-    if (
-      contacts.find(
-        contact => contact.name.toLowerCase() === name.toLowerCase(),
-      )
-    ) {
-      toast(` ${name} is already in use.`);
-    } else if (contacts.find(contact => contact.number === number)) {
-      toast(` ${number} is already in use.`);
-    } else if (name.trim() === '' || number.trim() === '') {
-      toast.info(" Enter the contact's name and  phone number!");
-    } else if (!/\d{3}[-]\d{2}[-]\d{2}/g.test(number)) {
-      toast.error(' Enter the correct  phone number(check format)!');
-    } else {
-      setContacts(prevContacts =>
-        [contact, ...prevContacts].sort((a, b) => {
-          if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-          if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
-          return 0;
-        }),
-      );
-    }
+    // if (
+    //   contacts.find(
+    //     contact => contact.name.toLowerCase() === name.toLowerCase(),
+    //   )
+    // ) {
+    //   toast(` ${name} is already in use.`);
+    // } else if (contacts.find(contact => contact.number === number)) {
+    //   toast(` ${number} is already in use.`);
+    // } else if (name.trim() === '' || number.trim() === '') {
+    //   toast.info(" Enter the contact's name and  phone number!");
+    // } else if (!/\d{3}[-]\d{2}[-]\d{2}/g.test(number)) {
+    //   toast.error(' Enter the correct  phone number(check format)!');
+    // } else {
+    //   setContacts(prevContacts =>
+    //     [contact, ...prevContacts].sort((a, b) => {
+    //       if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+    //       if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+    //       return 0;
+    //     }),
+    //   );
+    // }
   };
 
 

@@ -54,7 +54,7 @@ function Form({ onSubmit }) {
             <br />
             <label>
                 Message
-        <input
+        <textarea
                     className="input-field"
                     type="text"
                     name="message"
@@ -65,7 +65,7 @@ function Form({ onSubmit }) {
             </label>
 
             <button type="submit" className="submit-button">
-                Add contact
+                Add comment
       </button>
         </form>
     );

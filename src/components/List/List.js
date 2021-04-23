@@ -9,12 +9,12 @@ import T from 'prop-types';
 function List({ contacts }) {
     return (
         <ul className="contact-list">
-            {contacts.map(({ id, name, number }) => (
+            {contacts.map(({ id, name, message }) => (
                 <li key={id}>
                     <p>
                         <b>{name} </b>
 
-                        <em>{number}</em>
+                        <em>{message}</em>
                     </p>
 
 
@@ -31,10 +31,9 @@ List.propTypes = {
         T.shape({
             id: T.string.isRequired,
             name: T.string.isRequired,
-            number: T.string.isRequired,
+            message: T.string.isRequired,
         }),
-    ),
-    onDeleteContact: T.func.isRequired,
+    )
 };
 
 export default List
