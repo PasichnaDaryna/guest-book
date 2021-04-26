@@ -28,27 +28,14 @@ function App() {
       message,
     };
 
-    // if (
-    //   contacts.find(
-    //     contact => contact.name.toLowerCase() === name.toLowerCase(),
-    //   )
-    // ) {
-    //   toast(` ${name} is already in use.`);
-    // } else if (contacts.find(contact => contact.number === number)) {
-    //   toast(` ${number} is already in use.`);
-    // } else if (name.trim() === '' || number.trim() === '') {
-    //   toast.info(" Enter the contact's name and  phone number!");
-    // } else if (!/\d{3}[-]\d{2}[-]\d{2}/g.test(number)) {
-    //   toast.error(' Enter the correct  phone number(check format)!');
-    // } else {
-    //   setContacts(prevContacts =>
-    //     [contact, ...prevContacts].sort((a, b) => {
-    //       if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-    //       if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
-    //       return 0;
-    //     }),
-    //   );
-    // }
+
+    setContacts(prevContacts =>
+      [contact, ...prevContacts].sort((a, b) => {
+
+        return 0;
+      }),
+    );
+
   };
 
 

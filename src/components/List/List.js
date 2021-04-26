@@ -31,7 +31,7 @@ List.propTypes = {
         T.shape({
             id: T.string.isRequired,
             name: T.string.isRequired,
-            message: T.string.isRequired,
+
         }),
     )
 };
